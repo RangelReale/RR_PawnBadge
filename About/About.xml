@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RR_PawnBadge</name>
+  <author>Rangel Reale</author>
+  <supportedVersions>
+    <li>1.0</li>
+  </supportedVersions>
+  <description>
+    RR_PawnBadge adds up to 2 informative badges to the colonist bar.
+  </description>
+</ModMetaData>
