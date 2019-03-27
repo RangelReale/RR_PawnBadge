@@ -10,8 +10,8 @@ namespace RR_PawnBadge
     {
         public CompBadge()
         {
-            this.badgeA = -1;
-            this.badgeB = -1;
+            this.badgeA = "";
+            this.badgeB = "";
         }
 
         public override void PostExposeData()
@@ -19,7 +19,7 @@ namespace RR_PawnBadge
             base.PostExposeData();
         }
 
-        public int badgeA;
-        public int badgeB;
+        public string badgeA;
+        public string badgeB;
     }
 }
