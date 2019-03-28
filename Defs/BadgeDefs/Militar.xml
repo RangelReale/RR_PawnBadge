@@ -31,11 +31,5 @@
 		<description>US Militar Rank - Sergeant Major</description>
 		<icon>PawnBadge/Militar/i5-sergeant_major</icon>
 	</RR_PawnBadge.BadgeDef>
-	<RR_PawnBadge.BadgeDef>
-		<defName>Militar_Sergeant_Major_of_the_Army</defName>
-		<label>Militar - Sergeant Major of the Army</label>
-		<description>US Militar Rank - Sergeant Major of the Army</description>
-		<icon>PawnBadge/Militar/i6-sergeant_major_of_the_army</icon>
-	</RR_PawnBadge.BadgeDef>
 	
 </Defs>
