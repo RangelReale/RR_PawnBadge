@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+    <identifier>RR_PawnBadge</identifier>
+    <version>0.1.0.0</version>
+    <dependencies>
+        <li>HugsLib &gt;= 6.0</li>
+    </dependencies>
+    <manifestUri>https://raw.githubusercontent.com/RangelReale/RR_PawnBadge/master/About/Manifest.xml</manifestUri>
+    <downloadUri>https://github.com/RangelReale/RR_PawnBadge/releases/latest</downloadUri>
+</Manifest>
