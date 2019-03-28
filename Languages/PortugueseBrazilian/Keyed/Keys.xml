@@ -2,5 +2,6 @@
 <LanguageData>
 
     <TabBadge>Emblema</TabBadge>
+    <PawnBadge.BadgeNumber>Emblema {0}</PawnBadge.BadgeNumber>
 
 </LanguageData>

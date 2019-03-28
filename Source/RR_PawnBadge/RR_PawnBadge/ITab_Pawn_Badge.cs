@@ -57,15 +57,24 @@ namespace RR_PawnBadge
 
             for (int i = 0; i < 2; i++)
             {
-                // Widgets.Label(new Rect(0f, 0f, this.size.x, this.size.y), "Pawn badge text");
+                Rect badgeRect = new Rect(badgeRects[i].ContractedBy(12f));
 
-                float x = badgeRects[i].x;
-                float y = badgeRects[i].y + 20f;
+                string title = "PawnBadge.BadgeNumber".Translate(i+1);
+                Vector2 textSize = Text.CalcSize(title);
+
+                Widgets.Label(new Rect(badgeRect.x, badgeRect.y, badgeRect.width, textSize.y), title);
+                badgeRect.y += textSize.y;
+
+                LayoutManager layout = new LayoutManager(badgeRect, 40f, 30f);
+
                 List<BadgeDef> defs = new List<BadgeDef>(DefDatabase<BadgeDef>.AllDefsListForReading);
                 defs.Insert(0, new BadgeDef("", Mod.GreyTex));
+
+                for (int xx = 0; xx < 3; xx++)
                 foreach (BadgeDef def in defs)
                 {
-                    Rect brect = new Rect(x, y, 40f, 30f);
+                    Rect brect = layout.CurRect;
+
                     Widgets.DrawHighlightIfMouseover(brect);
                     GUI.DrawTexture(brect, def.Symbol, ScaleMode.ScaleToFit);
                     Widgets.DraggableResult draggableResult = Widgets.ButtonInvisibleDraggable(brect, false);
@@ -82,9 +91,8 @@ namespace RR_PawnBadge
                     {
                         Widgets.DrawBox(brect, 3);
                     }
-                    TooltipHandler.TipRegion(brect, () => def.description, 3882382 + (int)y * 17);
-
-                    x += 40f;
+                    TooltipHandler.TipRegion(brect, () => def.description, 3882382 + (int)brect.y * 17);
+                    layout.Next();
                 }
                 if (!Input.GetMouseButton(0))
                 {
@@ -100,5 +108,38 @@ namespace RR_PawnBadge
             return result == Widgets.DraggableResult.Pressed || result == Widgets.DraggableResult.DraggedThenPressed;
         }
 
+        private class LayoutManager
+        {
+            private Rect rect;
+            private float itemWidth;
+            private float itemHeight;
+            private float curX;
+            private float curY;
+
+            public LayoutManager(Rect rect, float itemWidth, float itemHeight)
+            {
+                this.rect = rect;
+                this.itemWidth = itemWidth;
+                this.itemHeight = itemHeight;
+
+                this.curX = this.rect.x;
+                this.curY = this.rect.y;
+            }
+
+            public Rect CurRect
+            {
+                get { return new Rect(this.curX, this.curY, this.itemWidth, this.itemHeight); }
+            }
+
+            public void Next()
+            {
+                this.curX += this.itemWidth;
+                if (this.curX + this.itemWidth > this.rect.xMax)
+                {
+                    this.curX = this.rect.x;
+                    this.curY += this.itemHeight;
+                }
+            }
+        }
     }
 }
