@@ -70,7 +70,6 @@ namespace RR_PawnBadge
                 List<BadgeDef> defs = new List<BadgeDef>(DefDatabase<BadgeDef>.AllDefsListForReading);
                 defs.Insert(0, new BadgeDef("", Mod.GreyTex));
 
-                for (int xx = 0; xx < 3; xx++)
                 foreach (BadgeDef def in defs)
                 {
                     Rect brect = layout.CurRect;
