@@ -2,12 +2,6 @@
 <Defs>
 
 	<RR_PawnBadge.BadgeDef>
-		<defName>Skill_Medicine</defName>
-		<label>Medicine</label>
-		<description>Medicine Skill</description>
-		<icon>UI/Commands/AsMedical</icon>
-	</RR_PawnBadge.BadgeDef>
-	<RR_PawnBadge.BadgeDef>
 		<defName>Skill_Shooting</defName>
 		<label>Shooting</label>
 		<description>Skill - Shooting</description>
@@ -17,7 +11,7 @@
 		<defName>Skill_Melee</defName>
 		<label>Melee</label>
 		<description>Skill - Melee</description>
-		<icon>UI/Commands/AttackMelee</icon>
+		<icon>PawnBadge/Skill/Melee</icon>
 	</RR_PawnBadge.BadgeDef>
 	<RR_PawnBadge.BadgeDef>
 		<defName>Skill_Cooking</defName>
@@ -26,10 +20,76 @@
 		<icon>PawnBadge/Skill/Cooking</icon>
 	</RR_PawnBadge.BadgeDef>
 	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Medicine</defName>
+		<label>Medicine</label>
+		<description>Medicine Skill</description>
+		<icon>PawnBadge/Skill/Medicine</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
 		<defName>Skill_Hauling</defName>
 		<label>Hauling</label>
 		<description>Skill - Hauling</description>
-		<icon>UI/Designators/Haul</icon>
+		<icon>PawnBadge/Skill/Haul</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Animal</defName>
+		<label>Animal</label>
+		<description>Skill - Animal</description>
+		<icon>PawnBadge/Skill/Animal</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Art</defName>
+		<label>Art</label>
+		<description>Skill - Art</description>
+		<icon>PawnBadge/Skill/Art</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Cleaning</defName>
+		<label>Cleaning</label>
+		<description>Skill - Cleaning</description>
+		<icon>PawnBadge/Skill/Cleaning</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Construction</defName>
+		<label>Construction</label>
+		<description>Skill - Construction</description>
+		<icon>PawnBadge/Skill/Construction</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Firefight</defName>
+		<label>Firefight</label>
+		<description>Skill - Firefight</description>
+		<icon>PawnBadge/Skill/Firefight</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Intellectual</defName>
+		<label>Intellectual</label>
+		<description>Skill - Intellectual</description>
+		<icon>PawnBadge/Skill/Intellectual</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Mining</defName>
+		<label>Mining</label>
+		<description>Skill - Mining</description>
+		<icon>PawnBadge/Skill/Mining</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Plant</defName>
+		<label>Plant</label>
+		<description>Skill - Plant</description>
+		<icon>PawnBadge/Skill/Plant</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Social</defName>
+		<label>Social</label>
+		<description>Skill - Social</description>
+		<icon>PawnBadge/Skill/Social</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Trade</defName>
+		<label>Trade</label>
+		<description>Skill - Trade</description>
+		<icon>PawnBadge/Skill/Trade</icon>
 	</RR_PawnBadge.BadgeDef>
 	
 </Defs>
