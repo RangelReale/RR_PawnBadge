@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Medicine</defName>
+		<label>Medicine</label>
+		<description>Medicine Skill</description>
+		<icon>UI/Commands/AsMedical</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Shooting</defName>
+		<label>Shooting</label>
+		<description>Skill - Shooting</description>
+		<icon>PawnBadge/Skill/Shooting</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Melee</defName>
+		<label>Melee</label>
+		<description>Skill - Melee</description>
+		<icon>UI/Commands/AttackMelee</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Cooking</defName>
+		<label>Cooking</label>
+		<description>Skill - Cooking</description>
+		<icon>PawnBadge/Skill/Cooking</icon>
+	</RR_PawnBadge.BadgeDef>
+	<RR_PawnBadge.BadgeDef>
+		<defName>Skill_Hauling</defName>
+		<label>Hauling</label>
+		<description>Skill - Hauling</description>
+		<icon>UI/Designators/Haul</icon>
+	</RR_PawnBadge.BadgeDef>
+	
+</Defs>
