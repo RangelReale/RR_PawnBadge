@@ -12,6 +12,18 @@ namespace RR_PawnBadge
         private Texture2D symbolTex;
         public string icon;
 
+        public BadgeDef() : base()
+        {
+
+        }
+
+        public BadgeDef(string defName, Texture2D symbolTex) : base()
+        {
+            this.defName = defName;
+            this.description = "";
+            this.symbolTex = symbolTex;
+        }
+
         public Texture2D Symbol
         {
             get

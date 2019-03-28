@@ -4,12 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 
 namespace RR_PawnBadge
 {
+    [StaticConstructorOnStartup]
     public class Mod : ModBase
     {
+        public static readonly Texture2D GreyTex = NewSolidColorTexture(Color.gray);
+
         Mod() : base()
         {
             HarmonyInstance.Create("RR_PawnBadge").PatchAll();
@@ -42,6 +46,26 @@ namespace RR_PawnBadge
                 }
                 t.comps.Add(new CompProperties_Badge());
             }
+        }
+
+        public static Texture2D NewSolidColorTexture(Color color)
+        {
+            if (!UnityData.IsInMainThread)
+            {
+                Log.Error("Tried to create a texture from a different thread.", false);
+                return null;
+            }
+            Texture2D texture2D = new Texture2D(35, 35);
+            texture2D.name = "RR_PawnBadge-SolidColorTex-" + color;
+
+            var fillColorArray = texture2D.GetPixels();
+            for (var i = 0; i < fillColorArray.Length; ++i)
+            {
+                fillColorArray[i] = color;
+            }
+            texture2D.SetPixels(fillColorArray);
+            texture2D.Apply();
+            return texture2D;
         }
     }
 }
