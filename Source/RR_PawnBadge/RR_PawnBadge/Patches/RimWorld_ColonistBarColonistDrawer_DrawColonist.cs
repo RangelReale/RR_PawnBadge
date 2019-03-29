@@ -29,18 +29,42 @@ namespace RR_PawnBadge
                 iwidth = iwidth + 10f;
                 break;
             }
-            float iwidth_half = iwidth / 2f;
+            float iwidth_half = iwidth / 2.0f;
+            float ibottommargin = iwidth_half;
 
+            // default position is Top, adjust starting from this
             if (cb.badges[0] != "")
             {
-                GUI.DrawTexture(new UnityEngine.Rect(rect.x - iwidth_half, rect.y - iwidth_half, iwidth, iwidth),
-                    DefDatabase<BadgeDef>.GetNamed(cb.badges[0]).Symbol, ScaleMode.ScaleToFit);
+                Rect brect = new Rect(rect.x - iwidth_half, rect.y - iwidth_half, iwidth, iwidth);
+                switch (Settings.badgePosition)
+                {
+                    case Settings.BadgePosition.Bottom:
+                        brect.y += rect.height - ibottommargin;
+                        break;
+                    case Settings.BadgePosition.Right:
+                        brect.x += rect.width;
+                        break;
+                }
+                GUI.DrawTexture(brect, DefDatabase<BadgeDef>.GetNamed(cb.badges[0]).Symbol, ScaleMode.ScaleToFit);
             }
 
             if (cb.badges[1] != "")
             {
-                GUI.DrawTexture(new UnityEngine.Rect(rect.xMax - iwidth_half, rect.y - iwidth_half, iwidth, iwidth),
-                    DefDatabase<BadgeDef>.GetNamed(cb.badges[1]).Symbol, ScaleMode.ScaleToFit);
+                Rect brect = new Rect(rect.xMax - iwidth_half, rect.y - iwidth_half, iwidth, iwidth);
+                switch (Settings.badgePosition)
+                {
+                    case Settings.BadgePosition.Bottom:
+                        brect.y += rect.height - ibottommargin;
+                        break;
+                    case Settings.BadgePosition.Left:
+                        brect.x -= rect.width;
+                        brect.y += rect.height - ibottommargin;
+                        break;
+                    case Settings.BadgePosition.Right:
+                        brect.y += rect.height - ibottommargin;
+                        break;
+                }
+                GUI.DrawTexture(brect, DefDatabase<BadgeDef>.GetNamed(cb.badges[1]).Symbol, ScaleMode.ScaleToFit);
             }
         }
     }
