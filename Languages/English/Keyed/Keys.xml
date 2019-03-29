@@ -3,5 +3,14 @@
 
     <TabBadge>Badge</TabBadge>
     <PawnBadge.BadgeNumber>Badge {0}</PawnBadge.BadgeNumber>
+    <PawnBadge.BadgePosition>Badge position</PawnBadge.BadgePosition>
+    <PawnBadge.BadgePosition_Top>Top</PawnBadge.BadgePosition_Top>
+    <PawnBadge.BadgePosition_Left>Left</PawnBadge.BadgePosition_Left>
+    <PawnBadge.BadgePosition_Right>Right</PawnBadge.BadgePosition_Right>
+    <PawnBadge.BadgePosition_Bottom>Bottom</PawnBadge.BadgePosition_Bottom>
+    <PawnBadge.BadgeSize>Badge size</PawnBadge.BadgeSize>
+    <PawnBadge.BadgeSize_Small>Small</PawnBadge.BadgeSize_Small>
+    <PawnBadge.BadgeSize_Medium>Medium</PawnBadge.BadgeSize_Medium>
+    <PawnBadge.BadgeSize_Large>Large</PawnBadge.BadgeSize_Large>
 
 </LanguageData>

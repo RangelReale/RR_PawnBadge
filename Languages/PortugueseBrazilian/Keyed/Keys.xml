@@ -3,5 +3,10 @@
 
     <TabBadge>Emblema</TabBadge>
     <PawnBadge.BadgeNumber>Emblema {0}</PawnBadge.BadgeNumber>
+    <PawnBadge.BadgePosition>Posição do emblema</PawnBadge.BadgePosition>
+    <PawnBadge.BadgePosition_Top>Em cima</PawnBadge.BadgePosition_Top>
+    <PawnBadge.BadgePosition_Left>Esquerda</PawnBadge.BadgePosition_Left>
+    <PawnBadge.BadgePosition_Right>Direita</PawnBadge.BadgePosition_Right>
+    <PawnBadge.BadgePosition_Bottom>Embaixo</PawnBadge.BadgePosition_Bottom>
 
 </LanguageData>
