@@ -27,7 +27,7 @@ To make a mod to add more badge icons, in your mod "Defs" directory create a XML
 
 Put a "Crown.png" file in the "Textures/PawnBadge" directory, and it's done!
 
-See [https://github.com/RangelReale/RR_PawnBadge_BadgeSample](this) repository for a sample of a mod adding a new icon.
+See [this](https://github.com/RangelReale/RR_PawnBadge_BadgeSample) repository for a sample of a mod adding a new icon.
 
 ### Author
 
