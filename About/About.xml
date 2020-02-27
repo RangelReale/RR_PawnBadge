@@ -5,8 +5,10 @@
   <url>https://ludeon.com/forums/index.php?topic=48461.0</url>
   <supportedVersions>
     <li>1.0</li>
+	<li>1.1</li>
   </supportedVersions>
   <description>
     Allows adding up to 2 informative badges to the colonist bar.
   </description>
+  <packageId>RangelReale.PawnBadge</packageId>
 </ModMetaData>
