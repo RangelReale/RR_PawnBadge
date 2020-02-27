@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR_PawnBadge", "RR_PawnBadge\RR_PawnBadge.csproj", "{4DB7D810-B55A-402B-AFFA-11C298845901}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR_PawnBadge-RW1.1", "RR_PawnBadge-RW1.1\RR_PawnBadge-RW1.1.csproj", "{BD131995-8E3A-4388-80BE-EEA6A92D196E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4DB7D810-B55A-402B-AFFA-11C298845901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB7D810-B55A-402B-AFFA-11C298845901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB7D810-B55A-402B-AFFA-11C298845901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD131995-8E3A-4388-80BE-EEA6A92D196E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD131995-8E3A-4388-80BE-EEA6A92D196E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD131995-8E3A-4388-80BE-EEA6A92D196E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD131995-8E3A-4388-80BE-EEA6A92D196E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
