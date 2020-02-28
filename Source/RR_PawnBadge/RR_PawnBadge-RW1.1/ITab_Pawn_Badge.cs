@@ -13,6 +13,11 @@ namespace RR_PawnBadge
     {
         private bool[] badgePainting = { false, false };
 
+		private readonly Vector2[] scrollPositions = new[]
+		{
+			Vector2.zero, Vector2.zero
+		};
+
         public ITab_Pawn_Badge()
         {
             this.size = new UnityEngine.Vector2(500f, 470f); ;
@@ -57,52 +62,66 @@ namespace RR_PawnBadge
 
             for (int i = 0; i < 2; i++)
             {
-                Rect badgeRect = new Rect(badgeRects[i].ContractedBy(12f));
-
-                string title = "PawnBadge.BadgeNumber".Translate(i+1);
-                Vector2 textSize = Text.CalcSize(title);
-
-                Widgets.Label(new Rect(badgeRect.x, badgeRect.y, badgeRect.width, textSize.y), title);
-                badgeRect.y += textSize.y;
-
-                LayoutManager layout = new LayoutManager(badgeRect, 40f, 30f);
-
-                List<BadgeDef> defs = new List<BadgeDef>(DefDatabase<BadgeDef>.AllDefsListForReading);
-                defs.Insert(0, new BadgeDef("", Mod.GreyTex));
-
-                foreach (BadgeDef def in defs)
-                {
-                    Rect brect = layout.CurRect;
-
-                    Widgets.DrawHighlightIfMouseover(brect);
-                    GUI.DrawTexture(brect, def.Symbol, ScaleMode.ScaleToFit);
-                    Widgets.DraggableResult draggableResult = Widgets.ButtonInvisibleDraggable(brect, false);
-                    if (draggableResult == Widgets.DraggableResult.Dragged)
-                    {
-                        badgePainting[i] = true;
-                    }
-                    if ((badgePainting[i] && Mouse.IsOver(brect) && def.defName != cb.badges[i]) || AnyPressed(draggableResult))
-                    {
-                        cb.badges[i] = def.defName;
-                        SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
-                    }
-                    if (cb.badges[i] == def.defName)
-                    {
-                        Widgets.DrawBox(brect, 3);
-                    }
-                    TooltipHandler.TipRegion(brect, () => def.description, 3882382 + (int)brect.y * 17);
-                    layout.Next();
-                }
-                if (!Input.GetMouseButton(0))
-                {
-                    badgePainting[i] = false;
-                }
+				DoBadgeDisplay(i, badgeRects, cb);
             }
 
             GUI.EndGroup();
         }
 
-        private static bool AnyPressed(Widgets.DraggableResult result)
+		private void DoBadgeDisplay(int i, IList<Rect> badgeRects, CompBadge cb)
+		{
+			Rect outRect = new Rect(badgeRects[i].ContractedBy(12f));
+			string title = "PawnBadge.BadgeNumber".Translate(i + 1);
+			Vector2 textSize = Text.CalcSize(title);
+
+			Widgets.Label(new Rect(outRect.x, outRect.y, outRect.width, textSize.y), title);
+			outRect.y += textSize.y;
+			outRect.height -= textSize.y;
+
+			Rect badgeRect = outRect;
+			badgeRect.width -= 16f;
+			badgeRect.height = 9999f;
+
+			Widgets.BeginScrollView(outRect, ref scrollPositions[i], badgeRect, true);
+
+
+
+			LayoutManager layout = new LayoutManager(badgeRect, 40f, 30f);
+
+			List<BadgeDef> defs = new List<BadgeDef>(DefDatabase<BadgeDef>.AllDefsListForReading);
+			defs.Insert(0, new BadgeDef("", Mod.GreyTex));
+
+			foreach (BadgeDef def in defs)
+			{
+				Rect brect = layout.CurRect;
+
+				Widgets.DrawHighlightIfMouseover(brect);
+				GUI.DrawTexture(brect, def.Symbol, ScaleMode.ScaleToFit);
+				Widgets.DraggableResult draggableResult = Widgets.ButtonInvisibleDraggable(brect, false);
+				if (draggableResult == Widgets.DraggableResult.Dragged)
+				{
+					badgePainting[i] = true;
+				}
+				if ((badgePainting[i] && Mouse.IsOver(brect) && def.defName != cb.badges[i]) || AnyPressed(draggableResult))
+				{
+					cb.badges[i] = def.defName;
+					SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
+				}
+				if (cb.badges[i] == def.defName)
+				{
+					Widgets.DrawBox(brect, 3);
+				}
+				TooltipHandler.TipRegion(brect, () => def.description, 3882382 + (int)brect.y * 17);
+				layout.Next();
+			}
+			if (!Input.GetMouseButton(0))
+			{
+				badgePainting[i] = false;
+			}
+			Widgets.EndScrollView();
+		}
+
+		private static bool AnyPressed(Widgets.DraggableResult result)
         {
             return result == Widgets.DraggableResult.Pressed || result == Widgets.DraggableResult.DraggedThenPressed;
         }
